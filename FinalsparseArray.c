@@ -2,7 +2,7 @@
 // using Linked Lists 
 #include<stdio.h> 
 #include<stdlib.h> 
-  //opoio einai to gamidi
+
 // Node to represent sparse matrix 
 struct Node 
 { 
@@ -62,7 +62,6 @@ void gridCreation (struct Node** start, int numberOfRows, int numberOfColumns)
     temp->rowPosition=-1;
 
 }
-
 
 // Function to insert new node 
 void insertNode(struct Node** start, int data, int rowIndex, int columnIndex ) 
@@ -258,15 +257,15 @@ void printgrid(struct Node** start){
     
 }
 
-// void menuToCreateTheGrid(struct Node** start){
-//     int rows;
-//     int columns;
-//     printf("Give the rows of the array");
-//     scanf("%d",&rows);  
-//     printf("Give the columns of the array");
-//     scanf("%d",&columns); 
-// 	gridCreation(&start, rows, columns);
-// }
+void menuToCreateTheGrid(struct Node** start){
+    int rows;
+    int columns;
+    printf("Give the rows of the array");
+    scanf("%d",&rows);  
+    printf("Give the columns of the array");
+    scanf("%d",&columns); 
+	gridCreation(&start, rows, columns);
+}
 
 int main (){
 	
@@ -284,14 +283,14 @@ int main (){
 
     //create the grid
     //The array has to be always square
-	int gridRows;
-    int gridColumns;
-    printf("\nGive the rows of the square array\n");
-    scanf("%d",&gridRows);  
+	// int gridRows;
+    // int gridColumns;
+    // printf("\nGive the rows of the square array\n");
+    // scanf("%d",&gridRows);  
     // printf("Give the columns of the array\n");
     // scanf("%d",&gridColumns); 
-	gridCreation(&start, gridRows, gridRows);
-    // menuToCreateTheGrid(&start);
+	// gridCreation(&start, gridRows, gridRows);
+    menuToCreateTheGrid(&start);
         
     char select='k';
 	int value;
@@ -316,6 +315,7 @@ int main (){
                 // if ((row<gridRows)&&(column<gridColumns)){
                 if ((row<gridRows)&&(column<gridRows)){
                     insertNode(&start, value, row, column);
+                    printf("Insert the symetric element\n");
                     //This is the symetric value
                     insertNode(&start, value, column,row);
                 }
@@ -340,6 +340,7 @@ int main (){
                 // if ((row<gridRows)&&(column<gridColumns)){
                 if ((row<gridRows)&&(column<gridRows)){
                     deleteElement(&start,row,column);
+                    printf("Delete the symetric element\n");
                     //Delete the symetric value
                     deleteElement(&start, column, row);
                 }

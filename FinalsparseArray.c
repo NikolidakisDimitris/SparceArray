@@ -286,7 +286,7 @@ int main (){
     //The array has to be always square
 	int gridRows;
     int gridColumns;
-    printf("\nGive the rows of the array\n");
+    printf("\nGive the rows of the square array\n");
     scanf("%d",&gridRows);  
     // printf("Give the columns of the array\n");
     // scanf("%d",&gridColumns); 
